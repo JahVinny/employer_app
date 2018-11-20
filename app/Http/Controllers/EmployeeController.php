@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class EmployeeController extends Controller
 {
     //This show all existing employees
-    function show()
+    public function show()
     {
         $employees = Employee::all();
 
@@ -17,14 +17,14 @@ class EmployeeController extends Controller
     }
 
     //This navigates to a form where you can capture new employee
-    function add()
+    public function add()
     {
         $html = view('employee_add')->render(); //navigate to add new employee view
         return json_encode(['status' => true, 'content' => $html]);
     }
 
     //This store/saves information of new employee and navigates to view of all employees
-    function store(Request $request)
+    public function store(Request $request)
     {
         $record = $request['data'];
         Employee::create($record);
@@ -36,7 +36,7 @@ class EmployeeController extends Controller
     }
 
     //This deletes an existing employee
-    function delete(Request $request)
+    public function delete(Request $request)
     {
         $id = $request['employee_id'];
 
@@ -52,7 +52,7 @@ class EmployeeController extends Controller
         return json_encode(['status' => true, 'content' => $html]);
     }
 
-    function edit(Request $request)
+    public function edit(Request $request)
     {
         $id = $request['employee_id'];
 
@@ -61,7 +61,7 @@ class EmployeeController extends Controller
         return json_encode(['status' => true, 'content' => $html]);
     }
 
-    function update(Request $request)
+    public function update(Request $request)
     {
         $record = $request['data'];
         $id = $request['employee_id'];
@@ -73,13 +73,13 @@ class EmployeeController extends Controller
         return json_encode(['status' => true, 'content' => $html]);
     }
 
-    function contact()
+    public function contact()
     {
         $html = view('contact_us')->render();
         return json_encode(['status' => true, 'content' => $html]);
     }
 
-    function team()
+    public function team()
     {
         $html = view('team')->render();
         return json_encode(['status' => true, 'content' => $html]);
