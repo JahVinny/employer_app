@@ -66,3 +66,12 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+## Installation
+
+* Setup the project on your loca machine
+* Create a new postgres database called "employees_data"
+* You can change the database username and password via .env file
+* Navigate to your project path using Terminal/Command Line
+* run php artisan migrate
+* You good to go. You perform CRUD functions and view information captured
